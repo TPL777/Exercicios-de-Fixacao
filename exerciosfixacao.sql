@@ -11,3 +11,9 @@ INSERT INTO nomes (nome) VALUES
 SELECT UPPER(nome) FROM nomes;
 
 SELECT nome, LENGTH(nome) AS tamanho FROM nomes;
+
+SELECT
+    CASE WHEN nome LIKE 'Rob%' OR nome = 'João' THEN CONCAT('Sr. ', nome)
+         ELSE CONCAT('Sra. ', nome)
+    END AS nome_com_tratamento
+FROM nomes;
