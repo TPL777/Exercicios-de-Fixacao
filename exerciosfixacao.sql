@@ -95,3 +95,18 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+DELIMITER //
+CREATE FUNCTION f_exponencial(base INT, expoente INT)
+RETURNS INT
+BEGIN
+    DECLARE resultado INT;
+    SET resultado = 1;
+    WHILE expoente > 0 DO
+        SET resultado = resultado * base;
+        SET expoente = expoente - 1;
+    END WHILE;
+    RETURN resultado;
+END;
+//
+DELIMITER ;
