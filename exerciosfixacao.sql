@@ -110,3 +110,18 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+DELIMITER //
+CREATE FUNCTION E_PALINDROMO(palavra VARCHAR(255))
+RETURNS INT
+BEGIN
+    DECLARE reverso VARCHAR(255);
+    SET reverso = REVERSE(palavra);
+    IF palavra = reverso THEN
+        RETURN 1;
+    ELSE
+        RETURN 0;
+    END IF;
+END;
+//
+DELIMITER ;
