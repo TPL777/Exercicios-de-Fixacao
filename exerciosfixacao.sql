@@ -72,3 +72,5 @@ END;
 DELIMITER ;
 
 SELECT produto, preco, quantidade, TOTAL_VALOR(preco, quantidade) AS valor_total FROM produtos;
+
+SELECT COUNT(*) AS total_de_produtos FROM produtos;
