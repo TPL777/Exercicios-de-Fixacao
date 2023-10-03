@@ -48,3 +48,4 @@ INSERT INTO eventos (data_evento) VALUES (NOW());
 
 SELECT DATEDIFF('2023-11-05', '2023-10-01') AS dias_entre_datas FROM eventos LIMIT 1;
 
+SELECT data_evento, DAYNAME(data_evento) AS dia_da_semana FROM eventos;
