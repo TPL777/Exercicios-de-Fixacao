@@ -80,3 +80,18 @@ SELECT produto, preco FROM produtos WHERE preco = (SELECT MAX(preco) FROM produt
 SELECT produto, preco FROM produtos WHERE preco = (SELECT MIN(preco) FROM produtos);
 
 SELECT SUM(IF(quantidade > 0, preco * quantidade, 0)) AS valor_total_em_estoque FROM produtos;
+
+DELIMITER //
+CREATE FUNCTION FATORIAL(n INT)
+RETURNS INT
+BEGIN
+    DECLARE resultado INT;
+    SET resultado = 1;
+    WHILE n > 0 DO
+        SET resultado = resultado * n;
+        SET n = n - 1;
+    END WHILE;
+    RETURN resultado;
+END;
+//
+DELIMITER ;
